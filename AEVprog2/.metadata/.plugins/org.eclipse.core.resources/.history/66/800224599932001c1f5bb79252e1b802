@@ -1,0 +1,32 @@
+package aev2;
+
+public class neo {
+	
+	public double funcion(double posicionNEO, double velocidadNEO) {
+	
+		double posicionTierra = 1;
+		double velocidadTierra = 100;
+		for (int i = 0; i < (50 * 365 * 24 * 60 * 60); i++) {
+		posicionNEO = posicionNEO + velocidadNEO * i;
+		posicionTierra = posicionTierra + velocidadTierra * i;
+		}
+		double resultado = 100 * Math.random() *
+		Math.pow( ((posicionNEO-posicionTierra)/(posicionNEO+posicionTierra)), 2);
+		
+		return resultado;
+	}
+	
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		neo prueb = new neo();
+		Double vel = Double.parseDouble(args[0]);
+		Double pos = Double.parseDouble(args[1]);
+		String nom = args[2];
+		
+		double resultado = 0;
+		resultado = prueb.funcion(vel, nom);
+		
+		
+	}
+}
